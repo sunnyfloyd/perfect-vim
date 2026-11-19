@@ -3,6 +3,7 @@
 **Space** is the leader key: `Space ff` means press Space, then f, then f.
 Stuck? Press **Space** and wait: a menu shows every possible next key.
 `Space sk` searches all shortcuts. `:Tutor` is a 30-minute interactive Vim lesson.
+**Practice:** `Space T` opens the trainer (in Polish): editing drills in a real buffer and a shortcut quiz.
 
 ## Survival
 

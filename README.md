@@ -27,6 +27,7 @@ ready to use. Press **F1** for the cheat sheet.
 | Git                                | `Space gg` lazygit, `Space gv` review changes, `]h` next change                                                                                  |
 | Claude Code inside the editor      | `Space ac` (sees your file and selection, proposes diffs)                                                                                        |
 | Cheat sheet                        | `F1`, or press `Space` and wait for the menu                                                                                                     |
+| Trainer (drills + shortcut quiz)   | `Space T`, see [Learning the keys](#learning-the-keys)                                                                                           |
 
 ## Install (once)
 
@@ -70,6 +71,19 @@ You can run several `pvim` sessions at once, for different projects or the same 
 With `-Port`, the dev server inside must listen on all interfaces, not just localhost, for example
 `npm run dev -- --host 0.0.0.0` (Vite), `next dev -H 0.0.0.0`, `flask run --host 0.0.0.0`,
 `uvicorn app:app --host 0.0.0.0`.
+
+## Learning the keys
+
+`Space T` (or `:Trainer`, or `t` on the start screen) opens a trainer. Its texts are in Polish.
+
+- **Drills:** 74 exercises in 8 lessons, from modes and motions to text objects, macros and real
+  code. You edit a real buffer with all your plugins; the drill checks the result as you go and
+  gives up to three stars for the number of keys you pressed. `F2` hint, `F3` start over, `F4` skip.
+- **Shortcut quiz:** 172 questions about this setup (files, LSP, git, Claude, debugging, …). You
+  press the keys, nothing runs. Spaced repetition brings back the ones you miss more often.
+
+Progress is kept between sessions. Add your own drills and questions in
+[lessons.lua](nvim/lua/config/trainer/lessons.lua) and [cards.lua](nvim/lua/config/trainer/cards.lua).
 
 ## How it works with your Windows folders
 
@@ -159,6 +173,7 @@ You can edit it from Windows, or inside Neovim with `Space fc` (find config file
 | [nvim/lua/config/autocmds.lua](nvim/lua/config/autocmds.lua) | Auto-reload of changed files, quit fix                                  |
 | [nvim/lua/plugins/](nvim/lua/plugins/)                       | Themes, Claude, debugger keys, git review, languages                    |
 | [nvim/cheatsheet.md](nvim/cheatsheet.md)                     | The F1 cheat sheet; add your own notes                                  |
+| [nvim/lua/config/trainer/](nvim/lua/config/trainer/)         | The trainer (`Space T`): drills in lessons.lua, quiz in cards.lua       |
 | [docker/Dockerfile](docker/Dockerfile)                       | System tools in the image (`pvim -Build` after editing)                 |
 
 More languages: `:LazyExtras` has Go, Rust, Java, C#, PHP, Ruby and many more. Languages that need

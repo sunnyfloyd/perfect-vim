@@ -8,3 +8,10 @@ end
 map({ "n", "i" }, "<F1>", cheatsheet, { desc = "Cheat Sheet" })
 map("n", "<leader>h", cheatsheet, { desc = "Cheat Sheet" })
 vim.api.nvim_create_user_command("Cheatsheet", cheatsheet, { desc = "Open the Perfect Vim cheat sheet" })
+
+-- Trainer: editing drills and a shortcut quiz (lua/config/trainer/)
+local function trainer()
+  require("config.trainer").open()
+end
+map("n", "<leader>T", trainer, { desc = "Trainer (practice Vim)" })
+vim.api.nvim_create_user_command("Trainer", trainer, { desc = "Practice Vim: editing drills and a shortcut quiz" })

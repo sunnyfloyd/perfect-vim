@@ -1,4 +1,4 @@
--- Start screen: adds "Cheat Sheet" and "Claude Code" to LazyVim's dashboard.
+-- Start screen: adds "Cheat Sheet", "Trainer" and "Claude Code" to LazyVim's dashboard.
 return {
   {
     "folke/snacks.nvim",
@@ -15,7 +15,15 @@ return {
           require("config.cheatsheet").toggle()
         end,
       })
-      table.insert(keys, 2, { icon = "󰚩 ", key = "a", desc = "Claude Code", action = ":ClaudeCode" })
+      table.insert(keys, 2, {
+        icon = "󰌌 ",
+        key = "t",
+        desc = "Trainer (Space T)",
+        action = function()
+          require("config.trainer").open()
+        end,
+      })
+      table.insert(keys, 3, { icon = "󰚩 ", key = "a", desc = "Claude Code", action = ":ClaudeCode" })
     end,
   },
 }
